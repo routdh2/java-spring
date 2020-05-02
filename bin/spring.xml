@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+        "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-init-method="turnOnLights" default-destroy-method="turnOffLights"> 
+	<bean id="triangle" class="com.springdemo.Triangle">
+		<constructor-arg value="Equilateral" index="0"/>
+		<constructor-arg value="20" index="1"/>
+	</bean>
+	
+	<bean id="acute" class="com.springdemo.Triangle">
+		<constructor-arg value="Acute" index="0"/>
+		<constructor-arg value="30" index="1"/>
+	</bean>
+	
+	<bean id="auditorium" class="com.springdemo.Auditorium"></bean>
+	<bean id="stage" class="com.springdemo.Stage" factory-method="getInstance"></bean>
+	<bean id="dhananjay" class="com.springdemo.Instrumentalist">
+		<property name="song" ref="song"></property>
+		<property name="instrument" ref="saxophone"></property>
+	</bean>
+	<bean id="song" class="com.springdemo.Song">
+		<constructor-arg value="Jingle-Bell"></constructor-arg>
+	</bean>
+	<bean id="saxophone" class="com.springdemo.Saxophone"></bean>
+</beans>
