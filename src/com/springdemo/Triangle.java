@@ -1,14 +1,16 @@
 package com.springdemo;
 
+import org.springframework.beans.factory.annotation.Value;
+
 public class Triangle implements Shape{
 	
+	@Value("Equilateral")
 	private String type;
 	private int height;
 	
 	public Triangle(String _type) {
 		this.type=_type;
 	}
-	
 	public Triangle(String type, int height) {
 		this.type=type;
 		this.height=height;
