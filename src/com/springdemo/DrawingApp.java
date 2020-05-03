@@ -11,17 +11,21 @@ public class DrawingApp {
 //		shape.draw();
 //		BeanFactory factory = new XmlBeanFactory(new FileSystemResource("spring.xml"));
 		ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
-		Shape shape = (Shape)context.getBean("triangle");
-		shape.draw();
-		Shape obj = (Shape)context.getBean("acute");
-		obj.draw();
-		shape.draw();
-		System.out.println(obj==shape);
-		Stage stageObj = (Stage)context.getBean("stage");
-		stageObj.sayHello();
+//		Shape shape = (Shape)context.getBean("triangle");
+//		shape.draw();
+//		Shape obj = (Shape)context.getBean("acute");
+//		obj.draw();
+//		shape.draw();
+//		System.out.println(obj==shape);
+//		Stage stageObj = (Stage)context.getBean("stage");
+//		stageObj.sayHello();
 		
 		Instrumentalist dhananjay = (Instrumentalist)context.getBean("dhananjay");
 		dhananjay.perform();
+//		GreatPerformer gObj = (GreatPerformer)context.getBean("greatPerformer");
+//		gObj.perform();
+		Shape triangle=(Triangle)context.getBean("triangle");
+		triangle.draw();
 
 	}
 
